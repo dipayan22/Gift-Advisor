@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Advisor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-dTl34OuPlV9W1GqCmR6PUabQtFhL8Aq84SPL/U3oGqs4g+zm5rZxRygyqibT4La8VfX6Gj6DHtz8ZA6BfgmtrA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div id="container" class="fade-in">
+    <h2><i class="fas fa-gift"></i> Gift Advisor</h2>
+
+    <form id="giftForm" action="/suggest_gift" method="post">
+        <label for="occasion">Occasion:</label>
+        <select id="occasion" name="occasion" required>
+            <option value="" disabled selected>Select an occasion</option>
+            <option value="valentine">Valentine's Day 💖</option>
+            <option value="birthday">Birthday 🎂</option>
+            <option value="anniversary">Anniversary 💑</option>
+            <option value="wedding">Wedding 💍</option>
+            <option value="graduation">Graduation 🎓</option>
+            <option value="baby-shower">Baby Shower 🍼</option>
+            <option value="retirement">Retirement 🎉</option>
+            <option value="promotion">Job Promotion 🚀</option>
+            <option value="farewell">Farewell 👋</option>
+            <option value="christmas">Christmas 🎄</option>
+            <option value="new-year">New Year's Eve 🎉</option>
+            <option value="halloween">Halloween 🎃</option>
+            <option value="diwali">Diwali 🪔</option>
+            <option value="thanksgiving">Thanksgiving 🦃</option>
+            <option value="mothers-day">Mother's Day 👩‍👧‍👦</option>
+            <option value="fathers-day">Father's Day 👨‍👧‍👦</option>
+            <option value="friendship-day">Friendship Day 👫</option>
+            <!-- Add more occasions as needed -->
+        </select>
+
+        <label for="recipient">Recipient:</label>
+        <select id="recipient" name="recipient" required>
+            <option value="" disabled selected>Select a recipient</option>
+            <option value="partner">Partner 👩‍❤️‍👨</option>
+            <option value="husband">Husband 👨‍❤️‍👨</option>
+            <option value="wife">Wife 👩‍❤️‍👩</option>
+            <option value="friend">Friend 👫</option>
+            <option value="family">Family Member 👨‍👩‍👧‍👦</option>
+            <option value="colleague">Colleague 👥</option>
+            <option value="teacher">Teacher 🎓</option>
+            <option value="boss">Boss 👔</option>
+            <option value="mentor">Mentor 🤝</option>
+            <option value="client">Client 💼</option>
+            <option value="neighbor">Neighbor 🏡</option>
+            <option value="pet">Pet 🐾</option>
+            <option value="sibling">Sibling 👫</option>
+            <option value="grandparent">Grandparent 👴👵</option>
+            <option value="cousin">Cousin 👨‍👧</option>
+            <option value="godparent">Godparent 🙏</option>
+            <option value="spouse">Spouse 👩‍❤️‍👨</option>
+            <!-- Add more recipients as needed -->
+        </select>
+
+        <label for="favoriteThing">Favorite Thing:</label>
+        <input type="text" id="favoriteThing" name="favoriteThing" placeholder="Enter their favorite thing" required>
+
+        <label for="budget">Budget:</label>
+        <input type="number" id="budget" name="budget" placeholder="Enter your budget" required>
+
+        <button type="submit"><i class="fas fa-gift"></i> Get Gift Suggestions</button>
+    </form>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

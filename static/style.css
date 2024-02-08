@@ -1,0 +1,128 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff8c00, #ff0080); /* Gradient from orange to pink */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff8c00, #ff0080); /* Gradient from orange to pink */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    background-color: rgba(255, 255, 255, 0.9); /* Light white background with transparency */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 80%; /* Set a percentage width for responsiveness */
+    max-width: 400px; /* Set a maximum width for larger screens */
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    margin: auto; /* Center the container */
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+select {
+    background-color: #f8f8f8;
+    color: #333;
+    appearance: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-image: url('your_select_arrow_icon_url.png'); /* Replace 'your_select_arrow_icon_url.png' with your actual icon URL */
+    background-position: 95% 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+select:hover {
+    background-color: #e0e0e0;
+}
+
+option {
+    background-color: #fff;
+    color: #333;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#occasion {
+    /* width: 200px;
+    padding: 8px; */
+    font-size: 16px;
+}
+#recipient {
+    /* width: 200px;
+    padding: 8px; */
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#giftSuggestions {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+#attribution {
+    margin-top: 20px;
+    font-size: 10px;
+    color: #777;
+}
+
+#attribution a {
+    color: #555;
+    text-decoration: none;
+}
+
+#attribution a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    #container {
+        width: 90%; /* Adjust the width for smaller screens */
+    }
+}

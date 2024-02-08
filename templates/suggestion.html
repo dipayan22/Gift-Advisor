@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Suggestion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-dTl34OuPlV9W1GqCmR6PUabQtFhL8Aq84SPL/U3oGqs4g+zm5rZxRygyqibT4La8VfX6Gj6DHtz8ZA6BfgmtrA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff8c00, #ff0080);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+            margin: auto;
+            background: linear-gradient(135deg, #3498db, #e74c3c);
+            color: #fff;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-family: 'Arial', sans-serif;
+            font-size: 2em;
+        }
+
+        .gift-idea {
+            margin-bottom: 20px;
+            text-align: left;
+            padding: 10px;
+            border: 2px solid #fff;
+            border-radius: 8px;
+            font-family: 'Georgia', serif;
+            font-size: 1.2em;
+            color: #333; /* Text color for regular text */
+        }
+
+        .gift-idea h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .gift-idea p {
+            color: #555; /* Text color for regular text */
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        #attribution {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #eee;
+        }
+
+        #attribution a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #attribution a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="container" class="fade-in">
+    <h2><i class="fas fa-gift"></i> Gift Suggestions</h2>
+
+    {% for suggestion in suggestion %}
+        <div class="gift-idea">
+            {% for line in suggestion.split('\n') %}
+                {% if line.startswith('- **') %}
+                    {{ line[3:] }}<br>
+                {% else %}
+                    {{ line }}<br>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+    <div id="attribution">
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
